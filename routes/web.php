@@ -18,5 +18,9 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//kérés, útvonal címe, controller neve, függvény neve
+Route::get('/api/tasks', [TaskController::class, 'index']);
+Route::get('/api/tasks/{id}', [TaskController::class, 'show']);
+Route::post('/api/tasks', [TaskController::class, 'store']);
+Route::put('/api/tasks/{id}', [TaskController::class, 'update']);
 //require __DIR__ . '/auth.php';
